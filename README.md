@@ -5,7 +5,9 @@ Para este exercício, iremos explorar a criação de uma aplicação mobile com 
 ## Passo 1
 
 Iremos utilizar o expo.io para criar a nossa base inicial. Para isso, abra o terminal e digite ```npx expo-cli init HelloReactNative```.
-Passo 2
+
+## Passo 2
+
 Selecione a primeira opção, conforme imagem (“Managed workflow - blank”)
 Digite um nome para sua aplicação e aperte enter.
 
