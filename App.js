@@ -1,20 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, SafeAreaView, FlatList, StatusBar } from 'react-native';
+import { RedditItem } from './components/RedditItem';
+import { usePosts } from './hooks/usePosts';
 
 export default function App() {
+
+  const posts = usePosts();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <FlatList
+        data={posts}
+        renderItem={({ item }) => <RedditItem item={item} />}
+        keyExtractor={item => item.data.id}
+      >
+      </FlatList>
+    </SafeAreaView>
+
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+    marginTop: StatusBar.currentHeight || 0,
+  }
+
 });
